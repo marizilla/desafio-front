@@ -1,11 +1,11 @@
 import React from 'react'
 
-const ListaVagas = () => {
+const ListVagas = () => {
   return (
     <React.Fragment>
-      <h2>ListaVagas</h2>
+      <h2>ListarVagas</h2>
     </React.Fragment>
   )
 }
 
-export default ListaVagas
+export default ListVagas
