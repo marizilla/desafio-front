@@ -1,0 +1,22 @@
+{
+    "vagas":[
+        {
+            "tituloCargo": "Balconista",
+            "salario": "1500",
+            "atividadesCargo": "Atendimento ao público, vendas",
+            "beneficiosCargo": "Vale Alimentação, Plano de Saúde",
+            "etapasProcesso": "Análise de currículo, entrevista, teste, contratação",
+            "habilidadesCargo": "Boa comunicação, boa oratória, gentileza, simpatia",
+            "experienciaCargo": "6 meses a 1 ano" 
+        },
+        {
+            "tituloCargo": "Confeiteira",
+            "salario": "2500",
+            "atividadesCargo": "Preparo e decoração de doces",
+            "beneficiosCargo": "Vale Alimentação, Plano de Saúde",
+            "etapasProcesso": "Análise de currículo, entrevista, teste, contratação",
+            "habilidadesCargo": "Saber trabalhar com confeitaria, decoração de bolos",
+            "experienciaCargo": "Mais de 1 ano" 
+        }
+    ]
+}
