@@ -1,0 +1,19 @@
+.novaVaga {
+    background: #EF416B;
+    box-shadow: 0px 4px 6px #EC0039;
+    border-radius: 5px;
+    color: #fff;
+    font-size: 18px;
+    font-weight: 400;
+    text-decoration: none;
+    padding: 10px;
+}
+.novaVaga:hover {
+    color: #000;
+    background: #FED7DA;
+    box-shadow: 0px 4px 6px #E55175;
+    border-radius: 5px;
+}
+.novaVaga-btn {
+    padding-bottom: .5rem;
+}

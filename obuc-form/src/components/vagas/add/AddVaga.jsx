@@ -1,4 +1,5 @@
 import React from 'react'
+import './AddVaga.css'
 
 const AddVaga = () => {
   return (

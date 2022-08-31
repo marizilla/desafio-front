@@ -1,0 +1,10 @@
+nav {
+    text-align: center;
+    padding: 2rem;
+}
+.h2{
+    color: #000;
+}
+.h2:hover {
+    color: #E55175;
+}
