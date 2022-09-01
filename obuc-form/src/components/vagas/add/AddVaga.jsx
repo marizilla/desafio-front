@@ -17,7 +17,7 @@ const AddVaga = () => {
                 <div className='top'>
                   <div className="tituloVaga">
                     <label htmlFor="">Título da vaga</label>
-                    <input type="text" className='form-control' placeholder='Balconista'/>
+                    <input type="text" className='form-control' placeholder='Ex.Balconista'/>
                   </div>
                   <div className="salario">
                     <label htmlFor="">Salário</label>
@@ -36,7 +36,7 @@ const AddVaga = () => {
                     <div className=""><input type="checkbox" name="" id="" /><span>Plano de Saúde</span></div>
                     <div className=""><input type="checkbox" name="" id="" /><span>Plano Odontológico</span></div>
                     <div className=""><input type="checkbox" name="" id="" /><span>Comissão</span></div>
-                    <div className=""><input type="checkbox" name="" id="" /><span>Premiassões</span></div>
+                    <div className=""><input type="checkbox" name="" id="" /><span>Premiações</span></div>
                   </div>
                 </div>
                 <div className='bottom'>
