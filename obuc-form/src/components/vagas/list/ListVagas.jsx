@@ -39,14 +39,14 @@ const ListVagas = () => {
       <section className="vagas-list">
         <div className="container">
           <div className="row">
-            <div className="col-md-6">
+            <div className="col-md-5">
               <div className="card">
                 <div className="card-body">
                   <div className="row align-items-center d-flex justify-content-around">
-                    <div className="col-md-4">
+                    {/* <div className="col-md-4">
                       <img src="https://images.vexels.com/media/users/3/197550/isolated/preview/e8295bb54c156b10e1409305d1c8a60d-valentine-cupcake-pink.png" alt="" className='vaga-img'/>
-                    </div>
-                    <div className="col-md-7">
+                    </div> */}
+                    <div className="col-md-10">
                       <ul className='list-group'>
                         <li className='list-group-item list-group-item-action'>
                           Vaga : <span className='fw-bold'>Balconista</span>
