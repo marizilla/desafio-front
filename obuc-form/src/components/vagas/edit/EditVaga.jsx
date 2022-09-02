@@ -1,7 +1,58 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
+import React, {useState, useEffect} from 'react'
+import { Link, useNavigate, useParams, BrowseRouter as Router, Route } from 'react-router-dom'
+import InputMask from "react-input-mask";
+import { editVaga, getVaga } from '../../../services/api.js';
+
+const initialValue ={
+  tituloCargo: "",
+  salario: "",
+  atividadesCargo: "",
+  beneficiosCargo: "",
+  etapasProcesso: "",
+  habilidadesCargo: "",
+  experienciaID: ""
+}
 
 const EditVaga = () => {
+
+  const [vaga, setVaga] = useState(initialValue);
+  const {
+    tituloCargo,
+    salario,
+    atividadesCargo,
+    beneficiosCargo,
+    etapasProcesso,
+    habilidadesCargo,
+    experienciaID
+  } = vaga;
+
+  const { vagaId } = useParams();
+
+  useEffect(() => {
+      loadVagaData();
+  },[]);
+
+  const loadVagaData = async () =>{
+      const response = await getVaga(vagaId);
+      setVaga(response.data);
+  }
+
+  const history = useNavigate();
+
+  const onValueChange = (e) =>
+  {
+    //  console.log(e);
+    // console.log(e.target.value);
+      setVaga({...vaga, [e.target.name]: e.target.value});
+      console.log(vaga);
+  }
+
+  const editVagaDetails = async () =>{
+     await editVaga(vagaId,vaga);
+     history.push('/vagas/list');
+  }
+
+
   return (
     <React.Fragment>
       <section className="add-vaga">
@@ -16,11 +67,15 @@ const EditVaga = () => {
                 <div className='top'>
                   <div className="tituloVaga">
                     <label htmlFor="">Título da vaga</label>
-                    <input type="text" className='form-control' placeholder='Balconista'/>
+                    <input type="text" className='form-control' placeholder='Balconista'
+                    onChange={(e) => onValueChange(e)} name="tituloCargo" value={tituloCargo}
+                    />
                   </div>
                   <div className="salario">
                     <label htmlFor="">Salário</label>
-                    <input type="text" className='form-control' placeholder='R$'/>
+                    <InputMask mask="R$ 9999,99" type="text" className='form-control' placeholder=''
+                    onChange={(e) => onValueChange(e)} name="salario" value={salario}
+                    />
                   </div>
                 </div>
                 <label htmlFor="">Benefícios</label>
@@ -35,18 +90,22 @@ const EditVaga = () => {
                     <div className=""><input type="checkbox" name="" id="" /><span>Plano de Saúde</span></div>
                     <div className=""><input type="checkbox" name="" id="" /><span>Plano Odontológico</span></div>
                     <div className=""><input type="checkbox" name="" id="" /><span>Comissão</span></div>
-                    <div className=""><input type="checkbox" name="" id="" /><span>Premiassões</span></div>
+                    <div className=""><input type="checkbox" name="" id="" /><span>Premiações</span></div>
                   </div>
                 </div>
                 <div className='bottom'>
                   <div className="atividades">
                       <label htmlFor="">Atividades a serem exercidas</label>
-                      <input type="text" className='form-control' placeholder=''/>
+                      <input type="text" className='form-control' placeholder=''
+                      onChange={(e) => onValueChange(e)} name="atividadesCargo" value={atividadesCargo}
+                      />
                   </div>
                   <div className='flex'>
                     <div className="habilidades">
                         <label htmlFor="">Habilidades necessárias</label>
-                        <input type="text" className='form-control' placeholder=''/>
+                        <input type="text" className='form-control' placeholder=''
+                        onChange={(e) => onValueChange(e)} name="habilidadesCargo" value={habilidadesCargo}
+                        />
                     </div>
                     <div className="experiencia">
                         <label htmlFor="">Experiência necessária</label>
@@ -60,10 +119,11 @@ const EditVaga = () => {
                   </div>
                   <div className="etapas">
                       <label htmlFor="">Etapas do processo seletivo</label>
-                      <input type="text" className='form-control' placeholder=''/>
+                      <input type="text" className='form-control' placeholder=''
+                      onChange={(e) => onValueChange(e)} name="etapasProcesso" value={etapasProcesso}/>
                   </div>
                 </div>
-                <button className='saveBtn'>Atualizar</button>
+                <button className='saveBtn' onClick={() => editVagaDetails()}>Atualizar</button>
                 <Link to={`/vagas/list`} className="btn btn-dark p-5px ms-2">Cancelar</Link>
               </form>              
             </div>

@@ -1,7 +1,36 @@
-import React from 'react';
-import { Link } from 'react-router-dom'
+import React, {useState, useEffect} from 'react';
+import { getVaga} from '../../../services/api';
+import '../check/VerVaga.css'
+import { jsPDF } from "jspdf";
+import html2canvas from "html2canvas";
+import { Link, useParams, BrowseRouter as Router, Route } from 'react-router-dom'
 
 const VerVaga = () => {
+
+  const [vaga, setVaga] = useState([]);
+    useEffect(() => {
+        getVagas();
+    }, [])
+
+  const { vagaId } = useParams();
+
+  const getVagas = async () =>{
+    const response = await getVaga(vagaId);
+    console.log(response);
+    setVaga(response.data);
+}
+
+const createPDF = async () => {   
+  const pdf = new jsPDF("portrait", "pt", "a4"); 
+  const data = await html2canvas(document.querySelector("#pdf"));
+  const img = data.toDataURL("image/png");  
+  const imgProperties = pdf.getImageProperties(img);
+  const pdfWidth = pdf.internal.pageSize.getWidth();
+  const pdfHeight = (imgProperties.height * pdfWidth) / imgProperties.width;
+  pdf.addImage(img, "PNG", 0, 0, pdfWidth, pdfHeight);
+  pdf.save("vaga.pdf");
+};
+
   return (
     <React.Fragment>
       <section className="check-title">
@@ -13,42 +42,41 @@ const VerVaga = () => {
           </div>
         </div>
       </section>
-      <section className="check-vaga mt-3">
+      <section className="check-vaga mt-3" id='pdf'>
         <div className="container">
           <div className="row">
-            <div className="col-md-8">
-            <ul className='list-group'>
-              <li className='list-group-item list-group-item-action'>
-                Cargo : <span className='fw-bold'>Balconista</span>
-              </li>
-              <li className='list-group-item list-group-item-action'>
-                Salário : <span className='fw-bold'>R$1500,00</span>
-              </li>
-              <li className='list-group-item list-group-item-action'>
-                Atividades : <span className='fw-bold'>Atendimento ao público, vendas</span>
-              </li>
-              <li className='list-group-item list-group-item-action'>
-                Benefícios : <span className='fw-bold'>Vale Alimentação/Refeição, Plano de Saúde, Plano Odontológico</span>
-              </li>
-              <li className='list-group-item list-group-item-action'>
-                Etapas da Seleção : <span className='fw-bold'>Análise de Currículo, Entrevista, Teste, Contratação</span>
-              </li>
-              <li className='list-group-item list-group-item-action'>
-                Habilidades Necessárias : <span className='fw-bold'>Boa comunicação, boa oratória, receptividade</span>
-              </li>
-              <li className='list-group-item list-group-item-action'>
-                Experiência : <span className='fw-bold'>6 meses a 1 ano</span>
-              </li>
-            </ul>
-            </div>
-            <div className="row">
-              <div className="col">
-                <Link to={`/vagas/list`} className='btn btn-warning mt-3 fw-bold'>Voltar</Link>
-              </div>
-            </div>
-          </div>
+            <div className="">            
+              <ul className='list'>
+                <li className='list-group-item list-group-item-action'>
+                  • Cargo : <span className='fw-bold'>{vaga.tituloCargo}</span>
+                </li>
+                <li className='list-group-item list-group-item-action'>
+                 • Salário : <span className='fw-bold'>{vaga.salario}</span>
+                </li>
+                <li className='list-group-item list-group-item-action'>
+                 • Atividades : <span className='fw-bold'>{vaga.atividadesCargo}</span>
+                </li>
+                <li className='list-group-item list-group-item-action'>
+                 • Benefícios : <span className='fw-bold'>{vaga.beneficiosCargo}</span>
+                </li>
+                <li className='list-group-item list-group-item-action'>
+                 • Etapas da Seleção : <span className='fw-bold'>{vaga.etapasProcesso}</span>
+                </li>
+                <li className='list-group-item list-group-item-action'>
+                 • Habilidades Necessárias : <span className='fw-bold'>{vaga.habilidadesCargo}</span>
+                </li>
+                <li className='list-group-item list-group-item-action'>
+                 • Experiência : <span className='fw-bold'>{vaga.experienciaID}</span>
+                </li>
+              </ul>
+            </div>            
+            </div>                       
         </div>
       </section>
+      <div className="buttons">
+        <button type="button" className='btn btn-primary fw-bold' onClick={createPDF}>Download</button>
+        <Link to={`/vagas/list`} className='btn btn-warning fw-bold'>Voltar</Link>
+      </div>
     </React.Fragment>
   )
 }

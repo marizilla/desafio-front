@@ -11,6 +11,7 @@
     max-width: 50%;
     align-self: center;
 }
+ 
 .modal-title {
     background: #E55175;
     color: #fff;
@@ -64,24 +65,24 @@ span {
 .bottom {
     margin-top: 14px;
 }
-.atividades {
-    width: 730px;
+.atividades input {
+    width: 700px;
 }
-.habilidades {
+.habilidades input{
     width: 400px;
 }
-.experiencia {
-    width: 200px;
+.experiencia select {
+    width: 270px;
 }
 .bottom .flex {
     display: flex;
     flex-direction: row;
-    gap: 30px;
-    margin-top: 14px; 
+    gap: 25px;
+    margin: 14px 0 15px 0; 
 }
 .etapas {
-    margin-top: 14px;
-    width: 730px;
+    margin: 14px 0 20px 0;
+    width: 700px;
 }
 .saveBtn {
     background: #EF416B;
@@ -89,12 +90,12 @@ span {
     border-radius: 5px;
     color: #fff;
     font-size: 18px;
-    font-weight: 400;
+    font-weight: bold;
     width: 100px;
     text-decoration: none;
-    padding: 5px;
+    padding: 6px 15px 6px 15px;
     border: none;
-    margin-top: 14px;    
+        
 }
 .saveBtn:hover {
     color: #000;

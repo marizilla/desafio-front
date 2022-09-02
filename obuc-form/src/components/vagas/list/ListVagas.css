@@ -1,3 +1,7 @@
+.wrapper {
+    display: flex;
+    justify-content: center;
+}
 .novaVaga {
     background: #EF416B;
     box-shadow: 0px 4px 6px #EC0039;

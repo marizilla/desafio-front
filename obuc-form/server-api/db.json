@@ -1,0 +1,62 @@
+{
+  "vagas": [
+    {
+      "tituloCargo": "Confeiteira de Brigadeiro",
+      "salario": "R$ 1500,00",
+      "atividadesCargo": "Atendimento ao público, vendas",
+      "beneficiosCargo": "Vale Alimentação, Plano de Saúde",
+      "etapasProcesso": "Análise de currículo, entrevista, teste, contratação",
+      "habilidadesCargo": "Boa comunicação, boa oratória, gentileza, simpatia",
+      "experienciaID": "2",
+      "id": 3
+    },
+    {
+      "tituloCargo": "Balconista",
+      "salario": "R$ 1500,00",
+      "atividadesCargo": "Atendimento ao público, vendas",
+      "beneficiosCargo": "Vale Alimentação, Plano de Saúde",
+      "etapasProcesso": "Análise de currículo, entrevista, teste, contratação",
+      "habilidadesCargo": "Boa comunicação, boa oratória, gentileza, simpatia",
+      "experienciaID": "2",
+      "id": 4
+    },
+    {
+      "tituloCargo": "Confeiteira de Macarons",
+      "salario": "R$ 750,00",
+      "atividadesCargo": "Confecção de macarons",
+      "beneficiosCargo": "",
+      "etapasProcesso": "Análise de Currículo, Entrevista, Teste, Contratação",
+      "habilidadesCargo": "Conhecimento em confeitaria francesa",
+      "experienciaID": "",
+      "id": 5
+    },
+    {
+      "tituloCargo": "Confeiteira de cupcakes",
+      "salario": "R$900,00",
+      "atividadesCargo": "Confecção e decoração de cupcakes",
+      "beneficiosCargo": "",
+      "etapasProcesso": "Análise de Currículo, Entrevista, Teste, Contratação",
+      "habilidadesCargo": "Saber trabalhar com cupcakes, noções de biossegurança e higiene na cozinha",
+      "experienciaID": "",
+      "id": 6
+    }
+  ],
+  "experiencia": [
+    {
+      "id": "1",
+      "name": "Sem experiência"
+    },
+    {
+      "id": "2",
+      "name": "6 meses a 1 ano"
+    },
+    {
+      "id": "3",
+      "name": "1 a 2 anos"
+    },
+    {
+      "id": "4",
+      "name": "Mais de 2 anos"
+    }
+  ]
+}
