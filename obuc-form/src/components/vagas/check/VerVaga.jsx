@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { getVaga } from "../../../services/api";
 import "../check/VerVaga.css";
+import logo from "../../../img/cabeçalho.svg";
 import { jsPDF } from "jspdf";
 import html2canvas from "html2canvas";
 import {
@@ -32,7 +33,7 @@ const VerVaga = () => {
     const pdfWidth = pdf.internal.pageSize.getWidth();
     const pdfHeight = (imgProperties.height * pdfWidth) / imgProperties.width;
     pdf.addImage(img, "PNG", 0, 0, pdfWidth, pdfHeight);
-    pdf.save("vaga.pdf");
+    pdf.save("VAGA.pdf");
   };
 
   return (
@@ -47,7 +48,9 @@ const VerVaga = () => {
         </div>
       </section>
       <section className="check-vaga mt-3" id="pdf">
-        <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+        <div className="cabecalho">
+          <img src={logo} alt="" />
+        </div>
         <div className="container">
           <div className="row">
             <div className="">

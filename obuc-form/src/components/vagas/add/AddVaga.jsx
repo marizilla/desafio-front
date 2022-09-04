@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import InputMask from "react-input-mask";
+import "antd/dist/antd.css";
+import { message } from "antd";
 import { addVaga, getVagaByTitle } from "../../../services/api";
 import "./AddVaga.css";
 
@@ -36,7 +38,20 @@ const AddVaga = () => {
 
   const addVagaDetails = async () => {
     console.log(vagas);
-    await addVaga(vagas);
+    if (
+      tituloCargo &&
+      salario &&
+      atividadesCargo &&
+      beneficiosCargo &&
+      etapasProcesso &&
+      habilidadesCargo &&
+      experiencia != null
+    ) {
+      await addVaga(vagas);
+      message.success("Registro criado com sucesso");
+    } else {
+      message.error("Preencha todos os campos");
+    }
   };
 
   const handleChange = (e) => {
@@ -74,12 +89,12 @@ const AddVaga = () => {
           <div className="modal-title">
             <h2 className="title">Nova Vaga</h2>
             <Link to={`/vagas/list`}>
-              <i className="fa-solid fa-circle-xmark" />
+              <i className="fa-solid fa-home" />
             </Link>
           </div>
           <div className="modal-card">
             <div className="card-wrapper">
-              <form action="." method="post">
+              <form method="post">
                 <div className="top">
                   <div className="tituloVaga">
                     <label htmlFor="">Título da vaga</label>
@@ -124,7 +139,7 @@ const AddVaga = () => {
                         name="beneficios"
                         id="2"
                         onChange={handleChange}
-                        value="Vale Transporte (04 passagens por dia)e"
+                        value="Vale Transporte (04 passagens por dia)"
                       />
                       <span>Vale Transporte (04 passagens por dia)</span>
                     </div>
@@ -246,7 +261,7 @@ const AddVaga = () => {
                   </div>
                 </div>
                 <Link
-                  to={`/vagas/list`}
+                  to={`/vagas/add`}
                   className="saveBtn"
                   onClick={() => addVagaDetails()}
                 >

@@ -29,9 +29,10 @@ let ListVagas = () => {
     setVagas(response.data);
   };
 
-  const handleAviso = (e) => {
+  const handleAviso = () => {
     setTimeout(() => {
-      message.success("Teste");
+      getVagas();
+      message.success("Registro excluido com sucesso!");
     }, 2000);
   };
 
@@ -131,7 +132,7 @@ let ListVagas = () => {
                               className="btn btn-danger my-1"
                               onClick={() => {
                                 deleteVaga(data.id);
-                                refreshPage();
+                                handleAviso();
                               }}
                             >
                               <i className="fa fa-trash" />

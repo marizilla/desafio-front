@@ -1,10 +1,10 @@
 {
   "vagas": [
     {
-      "tituloCargo": "Atendente 3",
+      "tituloCargo": "Atendente 8",
       "salario": "1500",
       "atividadesCargo": "Atendimento ao público, vendas",
-      "beneficiosCargo": "Vale Transporte (02 passagens por dia),Vale Transporte (04 passagens por dia)e,Vale Alimentação/Refeição",
+      "beneficiosCargo": "Vale Transporte (04 passagens por dia)e,Vale Alimentação/Refeição,Cesta Básica",
       "etapasProcesso": "Análise de currículo, entrevista, teste, contratação",
       "habilidadesCargo": "Boa comunicação, boa oratória, gentileza, simpatia",
       "experiencia": "1 a 2 anos",
@@ -79,6 +79,16 @@
       "habilidadesCargo": "Saber trabalhar com brigadeiros gourmet, noções de biossegurança e higiene na cozinha",
       "experiencia": "1 a 2 anos",
       "id": 11
+    },
+    {
+      "tituloCargo": "Balconista",
+      "salario": "1500",
+      "atividadesCargo": "Atendimento ao público, vendas",
+      "beneficiosCargo": "Vale Alimentação, Plano de Saúde",
+      "etapasProcesso": "Análise de currículo, entrevista, teste, contratação",
+      "habilidadesCargo": "Boa comunicação, boa oratória, gentileza, simpatia",
+      "experiencia": "Mais de 2 anos",
+      "id": 12
     }
   ],
   "experiencia": [

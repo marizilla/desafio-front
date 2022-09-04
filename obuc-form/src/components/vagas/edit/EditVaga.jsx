@@ -7,6 +7,8 @@ import {
   Route,
 } from "react-router-dom";
 import InputMask from "react-input-mask";
+import "antd/dist/antd.css";
+import { message } from "antd";
 import { editVaga, getVaga } from "../../../services/api.js";
 
 const initialValue = {
@@ -65,13 +67,13 @@ const EditVaga = () => {
   };
 
   const editVagaDetails = async () => {
+    message.success("Registro atualizado com sucesso");
     await editVaga(vagaId, vaga);
-    //history.push("/vagas/list");
   };
 
   return (
     <React.Fragment>
-      <section className="add-vaga">
+      <section className="add-vaga container-fluid">
         <div className="container-vaga">
           <div className="modal-title">
             <h2 className="title">Editar Vaga</h2>
@@ -81,7 +83,7 @@ const EditVaga = () => {
           </div>
           <div className="modal-card">
             <div className="col-md-10">
-              <form action="">
+              <form method="patch" className="container-fluid">
                 <div className="top">
                   <div className="tituloVaga">
                     <label htmlFor="">Título da vaga</label>
