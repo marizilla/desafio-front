@@ -52,14 +52,19 @@ const AddVaga = () => {
     console.log(beneficios);
   };
 
-  const loadVagaData = async () => {
-    const response = await getVagaByTitle(vagas.tituloCargo);
-    delete response.data[0].id;
+  const loadVagaData = async (e) => {
+    if (e.target.value != null) {
+      const response = await getVagaByTitle(vagas.tituloCargo);
+      delete response.data[0].id;
+      let listabeneficios = response.data[0].beneficiosCargo;
+      console.log(listabeneficios);
+      //if(response.data[0].beneficiosCargo != null)
 
-    if (response.data[0] != null) {
-      setVagas(response.data[0]);
+      if (response.data[0] != null) {
+        setVagas(response.data[0]);
+      }
+      console.log(response.data);
     }
-    console.log(response.data);
   };
 
   return (
@@ -84,7 +89,7 @@ const AddVaga = () => {
                       placeholder="Ex.Balconista"
                       onChange={(e) => onValueChange(e)}
                       name="tituloCargo"
-                      onBlur={(e) => loadVagaData()}
+                      onBlur={(e) => loadVagaData(e)}
                       value={tituloCargo}
                     />
                   </div>

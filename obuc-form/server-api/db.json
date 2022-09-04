@@ -1,20 +1,10 @@
 {
   "vagas": [
     {
-      "tituloCargo": "Balconista",
+      "tituloCargo": "Atendente 3",
       "salario": "1500",
       "atividadesCargo": "Atendimento ao público, vendas",
-      "beneficiosCargo": "Vale Alimentação, Plano de Saúde",
-      "etapasProcesso": "Análise de currículo, entrevista, teste, contratação",
-      "habilidadesCargo": "Boa comunicação, boa oratória, gentileza, simpatia",
-      "experiencia": "6 meses a 1 ano",
-      "id": 1
-    },
-    {
-      "tituloCargo": "Atendente",
-      "salario": "1500",
-      "atividadesCargo": "Atendimento ao público, vendas",
-      "beneficiosCargo": "Vale Alimentação, Plano de Saúde",
+      "beneficiosCargo": "Vale Transporte (02 passagens por dia),Vale Transporte (04 passagens por dia)e,Vale Alimentação/Refeição",
       "etapasProcesso": "Análise de currículo, entrevista, teste, contratação",
       "habilidadesCargo": "Boa comunicação, boa oratória, gentileza, simpatia",
       "experiencia": "1 a 2 anos",
@@ -29,16 +19,6 @@
       "habilidadesCargo": "Boa comunicação, boa oratória, gentileza, simpatia",
       "experiencia": "Mais de 2 anos",
       "id": 3
-    },
-    {
-      "tituloCargo": "Balconista",
-      "salario": "1500",
-      "atividadesCargo": "Atendimento ao público, vendas",
-      "beneficiosCargo": "Vale Alimentação, Plano de Saúde",
-      "etapasProcesso": "Análise de currículo, entrevista, teste, contratação",
-      "habilidadesCargo": "Boa comunicação, boa oratória, gentileza, simpatia",
-      "experiencia": "6 meses a 1 ano",
-      "id": 5
     },
     {
       "tituloCargo": "Balconista444",
@@ -89,6 +69,16 @@
       "habilidadesCargo": "Boa comunicação, boa oratória, gentileza, simpatia",
       "experiencia": "6 meses a 1 ano",
       "id": 10
+    },
+    {
+      "tituloCargo": "Confeiteira de Brigadeiro",
+      "salario": "R$ 3000,00",
+      "atividadesCargo": "Confecção e decoração de brigadeiros gourmet",
+      "beneficiosCargo": "Vale Alimentação/Refeição,Plano de Saúde,Plano Odontológico",
+      "etapasProcesso": "Análise de Currículo, Entrevista, Teste, Contratação",
+      "habilidadesCargo": "Saber trabalhar com brigadeiros gourmet, noções de biossegurança e higiene na cozinha",
+      "experiencia": "1 a 2 anos",
+      "id": 11
     }
   ],
   "experiencia": [

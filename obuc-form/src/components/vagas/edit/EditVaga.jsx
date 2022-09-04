@@ -51,9 +51,22 @@ const EditVaga = () => {
     console.log(vaga);
   };
 
+  const handleChange = (e) => {
+    const ul = document.querySelector("ul");
+    let selected = [];
+
+    const checado = document.querySelectorAll('input[type="checkbox"]:checked');
+    selected = Array.from(checado).map((x) => x.value);
+    let beneficios = selected.toString();
+    setVaga({ ...vaga, ["beneficiosCargo"]: beneficios });
+
+    console.log(selected);
+    console.log(beneficios);
+  };
+
   const editVagaDetails = async () => {
     await editVaga(vagaId, vaga);
-    history.push("/vagas/list");
+    //history.push("/vagas/list");
   };
 
   return (
@@ -94,41 +107,88 @@ const EditVaga = () => {
                     />
                   </div>
                 </div>
-                <label htmlFor="">Benefícios</label>
                 <div className="checkbox">
                   <div className="left">
                     <div className="">
-                      <input type="checkbox" name="" id="" />
+                      <input
+                        type="checkbox"
+                        name="beneficios"
+                        id="1"
+                        onChange={handleChange}
+                        value="Vale Transporte (02 passagens por dia)"
+                      />
                       <span>Vale Transporte (02 passagens por dia)</span>
                     </div>
                     <div className="">
-                      <input type="checkbox" name="" id="" />
+                      <input
+                        type="checkbox"
+                        name="beneficios"
+                        id="2"
+                        onChange={handleChange}
+                        value="Vale Transporte (04 passagens por dia)e"
+                      />
                       <span>Vale Transporte (04 passagens por dia)</span>
                     </div>
                     <div className="">
-                      <input type="checkbox" name="" id="" />
+                      <input
+                        type="checkbox"
+                        name="beneficios"
+                        id="3"
+                        onChange={handleChange}
+                        value="Vale Alimentação/Refeição"
+                      />
                       <span>Vale Alimentação/Refeição</span>
                     </div>
                     <div className="">
-                      <input type="checkbox" name="" id="" />
+                      <input
+                        type="checkbox"
+                        name="beneficios"
+                        id="4"
+                        onChange={handleChange}
+                        value="Cesta Básica"
+                      />
                       <span>Cesta Básica</span>
                     </div>
                   </div>
                   <div className="right">
                     <div className="">
-                      <input type="checkbox" name="" id="" />
+                      <input
+                        type="checkbox"
+                        name="beneficios"
+                        id="5"
+                        onChange={handleChange}
+                        value="Plano de Saúde"
+                      />
                       <span>Plano de Saúde</span>
                     </div>
                     <div className="">
-                      <input type="checkbox" name="" id="" />
+                      <input
+                        type="checkbox"
+                        name="beneficios"
+                        id="6"
+                        onChange={handleChange}
+                        value="Plano Odontológico"
+                      />
                       <span>Plano Odontológico</span>
                     </div>
                     <div className="">
-                      <input type="checkbox" name="" id="" />
+                      <input
+                        type="checkbox"
+                        name="beneficios"
+                        id="7"
+                        onChange={handleChange}
+                        value="Comissão"
+                      />
                       <span>Comissão</span>
                     </div>
                     <div className="">
-                      <input type="checkbox" name="" id="" />
+                      <input
+                        type="checkbox"
+                        name="beneficios"
+                        id="8"
+                        onChange={handleChange}
+                        value="Premiações"
+                      />
                       <span>Premiações</span>
                     </div>
                   </div>

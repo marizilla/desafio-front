@@ -6,6 +6,7 @@ import {
   deleteVaga,
   refreshPage,
   getVaga,
+  searchVaga,
 } from "../../../services/api";
 import "./ListVagas.css";
 
@@ -17,7 +18,14 @@ let ListVagas = () => {
 
   const getVagas = async () => {
     const response = await getallVagas();
-    console.log(response.data);
+    console.log("Lista Vagas", response.data);
+    setVagas(response.data);
+  };
+
+  const getVagaPesquisa = async (e) => {
+    const response = await searchVaga(e.target.value);
+    console.log("Pesquisa", response.data);
+    console.log("value", e.target.value);
     setVagas(response.data);
   };
 
@@ -52,6 +60,7 @@ let ListVagas = () => {
                       type="text"
                       className="form-control"
                       placeholder="Buscar Vagas"
+                      onBlur={(e) => getVagaPesquisa(e)}
                     />
                   </div>
                 </div>
@@ -80,36 +89,24 @@ let ListVagas = () => {
                     <div className="">
                       <div className="">
                         <ul className="list-group">
-                          <li
-                            key={data.id}
-                            className="list-group-item list-group-item-action"
-                          >
+                          <li className="list-group-item list-group-item-action">
                             Vaga :{" "}
                             <span className="fw-bold">{data.tituloCargo}</span>
                           </li>
 
-                          <li
-                            key={data.id}
-                            className="list-group-item list-group-item-action"
-                          >
+                          <li className="list-group-item list-group-item-action">
                             Salário :{" "}
                             <span className="fw-bold">{data.salario}</span>
                           </li>
 
-                          <li
-                            key={data.id}
-                            className="list-group-item list-group-item-action"
-                          >
+                          <li className="list-group-item list-group-item-action">
                             Atividades :{" "}
                             <span className="fw-bold">
                               {data.atividadesCargo}
                             </span>
                           </li>
 
-                          <li
-                            key={data.id}
-                            className="list-group-item list-group-item-action"
-                          >
+                          <li className="list-group-item list-group-item-action">
                             Experiência :{" "}
                             <span className="fw-bold">{data.experiencia}</span>
                           </li>

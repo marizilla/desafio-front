@@ -14,7 +14,7 @@ export const getVagaByTitle = async (title) => {
   return await axios.get(`${url}/?tituloCargo=${title}&_limit=1`);
 };
 export const searchVaga = async (title) => {
-  return await axios.get(`${url}/tituloCargo_like=${title}`);
+  return await axios.get(`${url}/?tituloCargo_like=${title}`);
 };
 
 export const addVaga = async (vagas) => {

@@ -47,6 +47,7 @@ const VerVaga = () => {
         </div>
       </section>
       <section className="check-vaga mt-3" id="pdf">
+        <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
         <div className="container">
           <div className="row">
             <div className="">
