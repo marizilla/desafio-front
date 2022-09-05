@@ -6,6 +6,7 @@ import { jsPDF } from "jspdf";
 import html2canvas from "html2canvas";
 import { Link, useParams } from "react-router-dom";
 
+// lógica para visualização dos dados
 const VerVaga = () => {
   const [vaga, setVaga] = useState([]);
   useEffect(() => {
@@ -20,6 +21,7 @@ const VerVaga = () => {
     setVaga(response.data);
   };
 
+  // gerador de PDF
   const createPDF = async () => {
     const pdf = new jsPDF("portrait", "pt", "a4");
     const data = await html2canvas(document.querySelector("#pdf"));

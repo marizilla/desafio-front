@@ -10,6 +10,7 @@ import {
 } from "../../../services/api";
 import "./ListVagas.css";
 
+// requisições http
 let ListVagas = () => {
   const [vagas, setVagas] = useState([]);
   useEffect(() => {
@@ -29,6 +30,7 @@ let ListVagas = () => {
     setVagas(response.data);
   };
 
+  // mensagem de aviso
   const handleAviso = () => {
     setTimeout(() => {
       getVagas();

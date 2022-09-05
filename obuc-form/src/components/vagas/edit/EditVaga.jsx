@@ -4,6 +4,7 @@ import "antd/dist/antd.css";
 import { message } from "antd";
 import { editVaga, getVaga } from "../../../services/api.js";
 
+// requisições http
 const initialValue = {
   tituloCargo: "",
   salario: "",
@@ -34,6 +35,7 @@ const EditVaga = () => {
     loadVagaData();
   }, []);
 
+  // lógica dos checkboxes
   const loadVagaData = async () => {
     const response = await getVaga(vagaId);
 
@@ -48,8 +50,6 @@ const EditVaga = () => {
   };
 
   const onValueChange = (e) => {
-    //  console.log(e);
-    // console.log(e.target.value);
     setVaga({ ...vaga, [e.target.name]: e.target.value });
     console.log(vaga);
   };
@@ -67,11 +67,9 @@ const EditVaga = () => {
       ["beneficiosCargo"]: beneficios,
       ["beneficiosId"]: selectedId,
     });
-    //console.log(selectedId);
-    //console.log(selected);
-    //console.log(beneficios);
   };
 
+  // formatação do valor do salário
   const formataSalario = (e) => {
     if (!e.target.value.includes("R$")) {
       let j = salario.replace(/[\D]+/g, "");
@@ -89,6 +87,7 @@ const EditVaga = () => {
     }
   };
 
+  // mensagem de aviso
   const editVagaDetails = async () => {
     if (
       tituloCargo &&
