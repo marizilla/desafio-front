@@ -259,32 +259,38 @@ const AddVaga = () => {
                     />
                   </div>
                   <div className="">
-                    <div className="habilidades">
-                      <label htmlFor="">Habilidades necessárias</label>
-                      <input
-                        type="text"
-                        className="form-control"
-                        placeholder=""
-                        onChange={(e) => onValueChange(e)}
-                        name="habilidadesCargo"
-                        value={habilidadesCargo}
-                      />
-                    </div>
-                    <div className="experiencia">
-                      <label htmlFor="">Experiência necessária</label>
-                      <select
-                        name="experiencia"
-                        id="actvites"
-                        className="form-select"
-                        onChange={(e) => onValueChange(e)}
-                        value={experiencia}
-                      >
-                        <option value=""></option>
-                        <option value="Sem experiência">Sem experiência</option>
-                        <option value="6 meses a 1 ano">6 meses a 1 ano</option>
-                        <option value="1 a 2 anos">1 a 2 anos</option>
-                        <option value="Mais de 2 anos">Mais de 2 anos</option>
-                      </select>
+                    <div className="bottom-side">
+                      <div className="habilidades">
+                        <label htmlFor="">Habilidades necessárias</label>
+                        <input
+                          type="text"
+                          className="form-control"
+                          placeholder=""
+                          onChange={(e) => onValueChange(e)}
+                          name="habilidadesCargo"
+                          value={habilidadesCargo}
+                        />
+                      </div>
+                      <div className="experiencia">
+                        <label htmlFor="">Experiência necessária</label>
+                        <select
+                          name="experiencia"
+                          id="actvites"
+                          className="form-select"
+                          onChange={(e) => onValueChange(e)}
+                          value={experiencia}
+                        >
+                          <option value=""></option>
+                          <option value="Sem experiência">
+                            Sem experiência
+                          </option>
+                          <option value="6 meses a 1 ano">
+                            6 meses a 1 ano
+                          </option>
+                          <option value="1 a 2 anos">1 a 2 anos</option>
+                          <option value="Mais de 2 anos">Mais de 2 anos</option>
+                        </select>
+                      </div>
                     </div>
                   </div>
                   <div className="etapas">

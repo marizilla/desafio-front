@@ -65,15 +65,6 @@ let ListVagas = () => {
                     />
                   </div>
                 </div>
-                <div className="col">
-                  <div className="mb-2">
-                    <input
-                      type="submit"
-                      className="btn btn-outline-dark"
-                      value="Buscar"
-                    />
-                  </div>
-                </div>
               </form>
             </div>
           </div>
