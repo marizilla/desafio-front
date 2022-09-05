@@ -1,34 +1,20 @@
 {
   "vagas": [
     {
-      "tituloCargo": "Atendente 8",
-      "salario": "1500",
-      "atividadesCargo": "Atendimento ao público, vendas",
-      "beneficiosCargo": "Vale Transporte (04 passagens por dia)e,Vale Alimentação/Refeição,Cesta Básica",
-      "etapasProcesso": "Análise de currículo, entrevista, teste, contratação",
-      "habilidadesCargo": "Boa comunicação, boa oratória, gentileza, simpatia",
-      "experiencia": "1 a 2 anos",
-      "id": 2
-    },
-    {
-      "tituloCargo": "Balconista",
-      "salario": "1500",
-      "atividadesCargo": "Atendimento ao público, vendas",
-      "beneficiosCargo": "Vale Alimentação, Plano de Saúde",
-      "etapasProcesso": "Análise de currículo, entrevista, teste, contratação",
-      "habilidadesCargo": "Boa comunicação, boa oratória, gentileza, simpatia",
-      "experiencia": "Mais de 2 anos",
-      "id": 3
-    },
-    {
       "tituloCargo": "Balconista444",
       "salario": "1500",
       "atividadesCargo": "Atendimento ao público, vendas",
-      "beneficiosCargo": "Vale Alimentação, Plano de Saúde",
+      "beneficiosCargo": "Vale Transporte (02 passagens por dia),Vale Transporte (04 passagens por dia)e,Vale Alimentação/Refeição,Cesta Básica",
       "etapasProcesso": "Análise de currículo, entrevista, teste, contratação",
       "habilidadesCargo": "Boa comunicação, boa oratória, gentileza, simpatia",
       "experiencia": "6 meses a 1 ano",
-      "id": 6
+      "id": 6,
+      "beneficiosId": [
+        "1",
+        "2",
+        "3",
+        "4"
+      ]
     },
     {
       "tituloCargo": "Ferreira",
@@ -41,54 +27,19 @@
       "id": 7
     },
     {
-      "tituloCargo": "Ferreira 874848484",
-      "salario": "R$ 1500,44",
-      "atividadesCargo": "Atendimento ao público, vendas",
-      "beneficiosCargo": "Vale Alimentação, Plano de Saúde",
-      "etapasProcesso": "Análise de currículo, entrevista, teste, contratação",
-      "habilidadesCargo": "Boa comunicação, boa oratória, gentileza, simpatia",
-      "experiencia": "6 meses a 1 ano",
-      "id": 8
-    },
-    {
-      "tituloCargo": "Balconista 555",
-      "salario": "1500",
-      "atividadesCargo": "Atendimento ao público, vendas",
-      "beneficiosCargo": "Vale Alimentação, Plano de Saúde",
-      "etapasProcesso": "Análise de currículo, entrevista, teste, contratação",
-      "habilidadesCargo": "Boa comunicação, boa oratória, gentileza, simpatia",
-      "experiencia": "6 meses a 1 ano",
-      "id": 9
-    },
-    {
-      "tituloCargo": "Balconista",
-      "salario": "1500",
-      "atividadesCargo": "Atendimento ao público, vendas",
-      "beneficiosCargo": "Vale Transporte (04 passagens por dia)e,Vale Alimentação/Refeição,Cesta Básica",
-      "etapasProcesso": "Análise de currículo, entrevista, teste, contratação",
-      "habilidadesCargo": "Boa comunicação, boa oratória, gentileza, simpatia",
-      "experiencia": "6 meses a 1 ano",
-      "id": 10
-    },
-    {
-      "tituloCargo": "Confeiteira de Brigadeiro",
-      "salario": "R$ 3000,00",
-      "atividadesCargo": "Confecção e decoração de brigadeiros gourmet",
-      "beneficiosCargo": "Vale Alimentação/Refeição,Plano de Saúde,Plano Odontológico",
+      "tituloCargo": "Mariana",
+      "salario": "R$ 5000,00",
+      "atividadesCargo": "Limpeza e higienização da cozinha",
+      "beneficiosCargo": "Vale Transporte (02 passagens por dia),Vale Transporte (04 passagens por dia),Vale Alimentação/Refeição",
       "etapasProcesso": "Análise de Currículo, Entrevista, Teste, Contratação",
-      "habilidadesCargo": "Saber trabalhar com brigadeiros gourmet, noções de biossegurança e higiene na cozinha",
-      "experiencia": "1 a 2 anos",
-      "id": 11
-    },
-    {
-      "tituloCargo": "Balconista",
-      "salario": "1500",
-      "atividadesCargo": "Atendimento ao público, vendas",
-      "beneficiosCargo": "Vale Alimentação, Plano de Saúde",
-      "etapasProcesso": "Análise de currículo, entrevista, teste, contratação",
-      "habilidadesCargo": "Boa comunicação, boa oratória, gentileza, simpatia",
+      "habilidadesCargo": "Conhecimento em limpesa detalhada ",
       "experiencia": "Mais de 2 anos",
-      "id": 12
+      "beneficiosId": [
+        "1",
+        "2",
+        "3"
+      ],
+      "id": 13
     }
   ],
   "experiencia": [

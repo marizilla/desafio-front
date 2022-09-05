@@ -14,6 +14,7 @@ const initialValue = {
   etapasProcesso: "",
   habilidadesCargo: "",
   experiencia: "",
+  beneficiosId: "",
 };
 
 const AddVaga = () => {
@@ -26,10 +27,9 @@ const AddVaga = () => {
     etapasProcesso,
     habilidadesCargo,
     experiencia,
+    beneficiosId,
     id,
   } = vagas;
-
-  const history = useNavigate();
 
   const onValueChange = (e) => {
     setVagas({ ...vagas, [e.target.name]: e.target.value });
@@ -55,27 +55,38 @@ const AddVaga = () => {
   };
 
   const handleChange = (e) => {
-    const ul = document.querySelector("ul");
     let selected = [];
+    let selectedId = [];
 
     const checado = document.querySelectorAll('input[type="checkbox"]:checked');
     selected = Array.from(checado).map((x) => x.value);
+    selectedId = Array.from(checado).map((x) => x.id);
     let beneficios = selected.toString();
-    setVagas({ ...vagas, ["beneficiosCargo"]: beneficios });
-
-    console.log(selected);
-    console.log(beneficios);
+    setVagas({
+      ...vagas,
+      ["beneficiosCargo"]: beneficios,
+      ["beneficiosId"]: selectedId,
+    });
+    //console.log(selectedId);
+    //console.log(selected);
+    //console.log(beneficios);
   };
 
   const loadVagaData = async (e) => {
     if (e.target.value != null) {
       const response = await getVagaByTitle(vagas.tituloCargo);
-      delete response.data[0].id;
-      let listabeneficios = response.data[0].beneficiosCargo;
-      console.log(listabeneficios);
-      //if(response.data[0].beneficiosCargo != null)
 
       if (response.data[0] != null) {
+        let listaBeneficiosId = response.data[0].beneficiosId;
+        //console.log(listaBeneficiosId);
+        if (listaBeneficiosId != null) {
+          let checkboxes = document.getElementsByName("beneficios");
+          for (var i = 0, n = checkboxes.length; i < n; i++) {
+            if (listaBeneficiosId.includes(String(i + 1)))
+              checkboxes[i].checked = true;
+          }
+        }
+        delete response.data[0].id;
         setVagas(response.data[0]);
       }
       console.log(response.data);
@@ -219,7 +230,7 @@ const AddVaga = () => {
                       value={atividadesCargo}
                     />
                   </div>
-                  <div className="flex">
+                  <div className="">
                     <div className="habilidades">
                       <label htmlFor="">Habilidades necessárias</label>
                       <input

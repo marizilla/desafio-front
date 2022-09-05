@@ -19,6 +19,7 @@ const initialValue = {
   etapasProcesso: "",
   habilidadesCargo: "",
   experienciaID: "",
+  beneficiosId: "",
 };
 
 const EditVaga = () => {
@@ -31,6 +32,7 @@ const EditVaga = () => {
     etapasProcesso,
     habilidadesCargo,
     experiencia,
+    beneficiosId,
   } = vaga;
 
   const { vagaId } = useParams();
@@ -41,10 +43,16 @@ const EditVaga = () => {
 
   const loadVagaData = async () => {
     const response = await getVaga(vagaId);
-    setVaga(response.data);
-  };
 
-  const history = useNavigate();
+    setVaga(response.data);
+
+    let listaBeneficiosId = response.data.beneficiosId;
+    let checkboxes = document.getElementsByName("beneficios");
+    for (var i = 0, n = checkboxes.length; i < n; i++) {
+      if (listaBeneficiosId.includes(String(i + 1)))
+        checkboxes[i].checked = true;
+    }
+  };
 
   const onValueChange = (e) => {
     //  console.log(e);
@@ -54,16 +62,21 @@ const EditVaga = () => {
   };
 
   const handleChange = (e) => {
-    const ul = document.querySelector("ul");
     let selected = [];
+    let selectedId = [];
 
     const checado = document.querySelectorAll('input[type="checkbox"]:checked');
     selected = Array.from(checado).map((x) => x.value);
+    selectedId = Array.from(checado).map((x) => x.id);
     let beneficios = selected.toString();
-    setVaga({ ...vaga, ["beneficiosCargo"]: beneficios });
-
-    console.log(selected);
-    console.log(beneficios);
+    setVaga({
+      ...vaga,
+      ["beneficiosCargo"]: beneficios,
+      ["beneficiosId"]: selectedId,
+    });
+    //console.log(selectedId);
+    //console.log(selected);
+    //console.log(beneficios);
   };
 
   const editVagaDetails = async () => {
@@ -73,7 +86,7 @@ const EditVaga = () => {
 
   return (
     <React.Fragment>
-      <section className="add-vaga container-fluid">
+      <section className="add-vaga">
         <div className="container-vaga">
           <div className="modal-title">
             <h2 className="title">Editar Vaga</h2>
@@ -83,7 +96,7 @@ const EditVaga = () => {
           </div>
           <div className="modal-card">
             <div className="col-md-10">
-              <form method="patch" className="container-fluid">
+              <form method="patch">
                 <div className="top">
                   <div className="tituloVaga">
                     <label htmlFor="">Título da vaga</label>
@@ -109,6 +122,7 @@ const EditVaga = () => {
                     />
                   </div>
                 </div>
+                <label htmlFor="">Benefícios</label>
                 <div className="checkbox">
                   <div className="left">
                     <div className="">
@@ -207,7 +221,7 @@ const EditVaga = () => {
                       value={atividadesCargo}
                     />
                   </div>
-                  <div className="flex">
+                  <div className="">
                     <div className="habilidades">
                       <label htmlFor="">Habilidades necessárias</label>
                       <input

@@ -4,18 +4,13 @@ import "../check/VerVaga.css";
 import logo from "../../../img/cabeçalho.svg";
 import { jsPDF } from "jspdf";
 import html2canvas from "html2canvas";
-import {
-  Link,
-  useParams,
-  BrowseRouter as Router,
-  Route,
-} from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 
 const VerVaga = () => {
   const [vaga, setVaga] = useState([]);
   useEffect(() => {
     getVagas();
-  }, []);
+  });
 
   const { vagaId } = useParams();
 
@@ -86,7 +81,7 @@ const VerVaga = () => {
           </div>
         </div>
       </section>
-      <div className="buttons">
+      <div className="check-buttons">
         <button
           type="button"
           className="btn btn-primary fw-bold"

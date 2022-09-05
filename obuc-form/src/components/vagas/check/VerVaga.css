@@ -1,9 +1,8 @@
-.buttons {
+.check-buttons {
   display: flex;
-  justify-content: flex-start;
-  gap: 10px;
-  margin: 0 0 20px 130px;
-  padding: 0 1rem 1rem;
+  gap: 15px;
+  justify-content: center;
+  padding-bottom: 1rem;
 }
 
 .list {
@@ -14,4 +13,26 @@
 .cabecalho {
   display: flex;
   justify-content: center;
+}
+
+@media only screen and (max-width: 500px) {
+  .list {
+    font-size: 18px;
+  }
+  .cabecalho {
+    display: flex;
+    justify-content: center;
+    max-width: max-content;
+  }
+
+  .check-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    padding-bottom: 2rem;
+  }
+
+  p {
+    text-align: center;
+  }
 }
