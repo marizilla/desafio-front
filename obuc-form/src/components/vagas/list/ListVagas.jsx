@@ -61,7 +61,7 @@ let ListVagas = () => {
                       type="text"
                       className="form-control"
                       placeholder="Buscar Vagas"
-                      onBlur={(e) => getVagaPesquisa(e)}
+                      onChange={(e) => getVagaPesquisa(e)}
                     />
                   </div>
                 </div>

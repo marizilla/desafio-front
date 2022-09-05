@@ -10,7 +10,7 @@ const VerVaga = () => {
   const [vaga, setVaga] = useState([]);
   useEffect(() => {
     getVagas();
-  });
+  }, []);
 
   const { vagaId } = useParams();
 

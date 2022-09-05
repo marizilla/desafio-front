@@ -1,12 +1,5 @@
 import React, { useState, useEffect } from "react";
-import {
-  Link,
-  useNavigate,
-  useParams,
-  BrowseRouter as Router,
-  Route,
-} from "react-router-dom";
-import InputMask from "react-input-mask";
+import { Link, Navigate, useParams } from "react-router-dom";
 import "antd/dist/antd.css";
 import { message } from "antd";
 import { editVaga, getVaga } from "../../../services/api.js";
@@ -79,9 +72,38 @@ const EditVaga = () => {
     //console.log(beneficios);
   };
 
+  const formataSalario = (e) => {
+    if (!e.target.value.includes("R$")) {
+      let j = salario.replace(/[\D]+/g, "");
+
+      let valorFormatado = Number(j).toLocaleString("pt-br", {
+        style: "currency",
+        currency: "BRL",
+      });
+      console.log(valorFormatado);
+
+      setVaga({ ...vaga, ["salario"]: valorFormatado });
+      return valorFormatado;
+    } else {
+      return null;
+    }
+  };
+
   const editVagaDetails = async () => {
-    message.success("Registro atualizado com sucesso");
-    await editVaga(vagaId, vaga);
+    if (
+      tituloCargo &&
+      salario &&
+      atividadesCargo &&
+      beneficiosCargo &&
+      etapasProcesso &&
+      habilidadesCargo &&
+      experiencia != null
+    ) {
+      editVaga(vagaId, vaga);
+      await message.success("Registro atualizado com sucesso");
+    } else {
+      await message.error("Existem campos sem preenchimento.");
+    }
   };
 
   return (
@@ -96,7 +118,7 @@ const EditVaga = () => {
           </div>
           <div className="modal-card">
             <div className="col-md-10">
-              <form method="patch">
+              <form>
                 <div className="top">
                   <div className="tituloVaga">
                     <label htmlFor="">Título da vaga</label>
@@ -111,12 +133,14 @@ const EditVaga = () => {
                   </div>
                   <div className="salario">
                     <label htmlFor="">Salário</label>
-                    <InputMask
-                      mask="R$ 9999,99"
+                    <input
                       type="text"
                       className="form-control"
                       placeholder=""
                       onChange={(e) => onValueChange(e)}
+                      onBlur={(e) => {
+                        formataSalario(e);
+                      }}
                       name="salario"
                       value={salario}
                     />
@@ -262,9 +286,13 @@ const EditVaga = () => {
                     />
                   </div>
                 </div>
-                <button className="saveBtn" onClick={() => editVagaDetails()}>
+                <Link
+                  to={`/vagas/list`}
+                  className="saveBtn"
+                  onClick={() => editVagaDetails()}
+                >
                   Atualizar
-                </button>
+                </Link>
                 <Link to={`/vagas/list`} className="btn btn-dark p-5px ms-2">
                   Cancelar
                 </Link>

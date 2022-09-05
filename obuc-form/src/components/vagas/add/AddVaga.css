@@ -106,7 +106,7 @@ span {
   border-radius: 5px;
 }
 
-@media only screen and (max-width: 500px) {
+@media only screen and (max-width: 600px) {
   .container-vaga {
     max-width: 90vw;
   }
@@ -161,5 +161,11 @@ span {
 
   .experiencia select {
     width: 300px;
+  }
+}
+
+@media only screen and (max-width: 1400px) {
+  .container-vaga {
+    max-width: 90vw;
   }
 }

@@ -1,9 +1,8 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import InputMask from "react-input-mask";
 import "antd/dist/antd.css";
 import { message } from "antd";
-import { addVaga, getVagaByTitle } from "../../../services/api";
+import { addVaga, getVagaByTitle, refreshPage } from "../../../services/api";
 import "./AddVaga.css";
 
 const initialValue = {
@@ -48,7 +47,13 @@ const AddVaga = () => {
       experiencia != null
     ) {
       await addVaga(vagas);
-      message.success("Registro criado com sucesso");
+      await message.success("Registro criado com sucesso");
+
+      setTimeout(() => {
+        refreshPage();
+      }, 2000);
+
+      refreshPage();
     } else {
       message.error("Preencha todos os campos");
     }
@@ -70,6 +75,23 @@ const AddVaga = () => {
     //console.log(selectedId);
     //console.log(selected);
     //console.log(beneficios);
+  };
+
+  const formataSalario = (e) => {
+    if (!e.target.value.includes("R$")) {
+      let j = salario.replace(/[\D]+/g, "");
+
+      let valorFormatado = Number(j).toLocaleString("pt-br", {
+        style: "currency",
+        currency: "BRL",
+      });
+      console.log(valorFormatado);
+
+      setVagas({ ...vagas, ["salario"]: valorFormatado });
+      return valorFormatado;
+    } else {
+      return null;
+    }
   };
 
   const loadVagaData = async (e) => {
@@ -121,11 +143,17 @@ const AddVaga = () => {
                   </div>
                   <div className="salario">
                     <label htmlFor="">Salário</label>
-                    <InputMask
-                      mask="R$ 9999,99"
+                    <input
+                      inputMode="numeric"
+                      type="text"
                       className="form-control"
                       placeholder="R$"
-                      onChange={(e) => onValueChange(e)}
+                      onChange={(e) => {
+                        onValueChange(e);
+                      }}
+                      onBlur={(e) => {
+                        formataSalario(e);
+                      }}
                       name="salario"
                       value={salario}
                     />
