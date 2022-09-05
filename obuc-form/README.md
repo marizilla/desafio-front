@@ -16,7 +16,7 @@
 
 Antes de começar, você vai precisar ter instalado em sua máquina as seguintes ferramentas: Git, Node.js. Além disto é bom ter um editor para trabalhar com o código como VSCode
 
-💡Após baixar ou clonar o repositório, no diretório 'desafio-obuc-front', digite os seguintes comandos no terminal/cmd:
+💡Após baixar ou clonar o repositório, no diretório 'obuc-form', digite os seguintes comandos no terminal/cmd:
 
 ### `npm install` para instalar o Node e as dependências do projeto. Em seguida:
 
@@ -52,7 +52,7 @@ Antes de começar, você vai precisar ter instalado em sua máquina as seguintes
 
 Este projeto esta sobe a licença [MIT](./LICENSE).
 
-Feito com ❤️ por Mariana OLiveira 👋🏽 [Entre em contato!](linkedin.com/in/mariana-oliveira-2121711b0/)
+Feito com ❤️ por Mariana OLiveira 👋🏽 [Entre em contato!](https://linkedin.com/in/mariana-oliveira-2121711b0/)
 
 <details>
 <summary><h2>Getting Started with Create React App</h2></summary>
